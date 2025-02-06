@@ -6,7 +6,7 @@ def extract(m):
     vals = {
         arc: val
         for arc in arcs
-        if (val := round(x[arc].X)) != 0
+        if (val := round(x[arc].x)) != 0
     }
     paths = []
     def _get_arc(u, v=None):
