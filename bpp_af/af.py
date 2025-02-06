@@ -1,6 +1,7 @@
 import collections
 import gurobipy as gp
 from .instance import Instance
+from .extract import extract
 
 
 def build(inst: Instance):
@@ -53,3 +54,10 @@ def build(inst: Instance):
 
     m.setObjective(x.sum(0, '*'))
     return m
+
+
+def solve(inst: Instance):
+    m = build(inst)
+    m.setParam('OutputFlag', 0)
+    m.optimize()
+    return extract(m)
