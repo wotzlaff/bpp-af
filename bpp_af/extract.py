@@ -1,5 +1,3 @@
-import collections
-
 def extract(m):
     inst = m._inst
     its = m._its
